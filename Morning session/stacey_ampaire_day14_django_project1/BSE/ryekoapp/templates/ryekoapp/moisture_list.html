@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RyekoApp</title>
+</head>
+<body>
+    <h1>Soil Moisture Details</h1>
+    <ul>
+        {% for measurement in measurements %}
+            <li>
+                {{ measurement.location.name }}: Moisture {{ measurement.moisture_level }},
+                pH {{ measurement.pH_level }},
+                Temp {{ measurement.temperature }} (Measured at {{ measurement.measured_at }})
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
